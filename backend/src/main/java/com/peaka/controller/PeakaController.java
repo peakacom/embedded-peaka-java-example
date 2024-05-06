@@ -45,8 +45,8 @@ public class PeakaController {
         // Then generate api key for the project
         PeakaAPIKeyDTO apiKeyDTO = service.createPeakaAPIKey(projectName, projectId);
 
-         return new CreatePeakaProjectDTO(
-                 projectName, projectId, apiKeyDTO.getApiKey());
+        return new CreatePeakaProjectDTO(
+                projectName, projectId, apiKeyDTO.getApiKey());
     }
 
     @PostMapping("connect")
@@ -57,7 +57,7 @@ public class PeakaController {
 
     @PostMapping("get-data")
     @CrossOrigin(origins = "http://localhost:5173")
-    public Map<String,Object> getData(@RequestBody GetDataRequestDTO requestDTO) {
+    public Map<String, Object> getData(@RequestBody GetDataRequestDTO requestDTO) {
         //Load the JDBC Driver for Peaka
         try {
             Class.forName("com.peaka.jdbc.PeakaDriver");
@@ -65,13 +65,13 @@ public class PeakaController {
             throw new RuntimeException(t);
         }
 
-        Map<String, Object> result =  new HashMap<>();
+        Map<String, Object> result = new HashMap<>();
         try {
             //Get the JDBC driver url from partner api
             SupportedDriversDTO driversDTO = service.getJDBCURL(requestDTO.apiKey());
             Properties properties = new Properties();
             properties.setProperty("SSL", "true");
-            Connection connection = DriverManager.getConnection(driversDTO.JDBC(),properties);
+            Connection connection = DriverManager.getConnection(driversDTO.JDBC(), properties);
             Statement stmt = connection.createStatement();
 
             Map<String, String> valuesMap = new HashMap<>();
@@ -86,7 +86,7 @@ public class PeakaController {
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
                 // We are fetching first 10 columns
-                for(int i=1; i<=10; i++) {
+                for (int i = 1; i <= 10; i++) {
                     result.put(rs.getMetaData().getColumnName(i), rs.getObject(rs.getMetaData().getColumnName(i)));
                 }
             }

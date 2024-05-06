@@ -90,67 +90,67 @@ public class PeakaProjectDTO {
 
     // Setter Methods
 
-    public void setId( String id ) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public void setOwner( String owner ) {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 
-    public void setName( String name ) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public void setDescription( String description ) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public void setDomain( String domain ) {
+    public void setDomain(String domain) {
         this.domain = domain;
     }
 
-    public void setPreviewURL( String previewURL ) {
+    public void setPreviewURL(String previewURL) {
         this.previewURL = previewURL;
     }
 
-    public void setVersion( float version ) {
+    public void setVersion(float version) {
         this.version = version;
     }
 
-    public void setDeleted( boolean deleted ) {
+    public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }
 
-    public void setParent( String parent ) {
+    public void setParent(String parent) {
         this.parent = parent;
     }
 
-    public void setInvitedBy( String invitedBy ) {
+    public void setInvitedBy(String invitedBy) {
         this.invitedBy = invitedBy;
     }
 
-    public void setCreatedAt( String createdAt ) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public void setUpdatedAt( String updatedAt ) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 
-    public void setDeletedAt( String deletedAt ) {
+    public void setDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
     }
 
-    public void setDisabled( boolean disabled ) {
+    public void setDisabled(boolean disabled) {
         this.disabled = disabled;
     }
 
-    public void setInternalApp( boolean internalApp ) {
+    public void setInternalApp(boolean internalApp) {
         this.internalApp = internalApp;
     }
 
-    public void setTemplate( boolean template ) {
+    public void setTemplate(boolean template) {
         this.template = template;
     }
 }

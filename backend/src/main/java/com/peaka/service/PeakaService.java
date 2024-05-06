@@ -23,7 +23,7 @@ import java.util.List;
 
 @Service
 public class PeakaService {
-    private static final String  PEAKA_PARTNER_API_BASE_URL= "https://partner.peaka.studio/api/v1";
+    private static final String PEAKA_PARTNER_API_BASE_URL = "https://partner.peaka.studio/api/v1";
     Logger logger = LoggerFactory.getLogger(PeakaService.class);
 
     @Autowired
@@ -33,7 +33,7 @@ public class PeakaService {
         String projectName = RandomStringUtils.randomAlphabetic(10);
         RestTemplate restTemplate = new RestTemplate();
         try {
-            URI uri = new URI(PEAKA_PARTNER_API_BASE_URL +"/projects");
+            URI uri = new URI(PEAKA_PARTNER_API_BASE_URL + "/projects");
 
             HttpEntity<CreatePeakaProjectRequestDTO> request = new
                     HttpEntity<>(new CreatePeakaProjectRequestDTO(projectName),
@@ -50,7 +50,7 @@ public class PeakaService {
     public PeakaAPIKeyDTO createPeakaAPIKey(String projectName, String projectId) {
         RestTemplate restTemplate = new RestTemplate();
         try {
-            URI uri = new URI(PEAKA_PARTNER_API_BASE_URL +"/projects/"+ projectId +"/apiKeys");
+            URI uri = new URI(PEAKA_PARTNER_API_BASE_URL + "/projects/" + projectId + "/apiKeys");
 
             HttpEntity<CreatePeakaProjectRequestDTO> request = new
                     HttpEntity<>(new CreatePeakaProjectRequestDTO(projectName),
@@ -67,7 +67,7 @@ public class PeakaService {
     public ConnectDTO connect(String projectAPIKey) {
         RestTemplate restTemplate = new RestTemplate();
         try {
-            URI uri = new URI(PEAKA_PARTNER_API_BASE_URL +"/ui/initSession");
+            URI uri = new URI(PEAKA_PARTNER_API_BASE_URL + "/ui/initSession");
 
             HttpEntity<Void> request = new
                     HttpEntity<>(
@@ -84,7 +84,7 @@ public class PeakaService {
     public SupportedDriversDTO getJDBCURL(String projectAPIKey) {
         RestTemplate restTemplate = new RestTemplate();
         try {
-            URI uri = new URI(PEAKA_PARTNER_API_BASE_URL +"/supportedDrivers/jdbc");
+            URI uri = new URI(PEAKA_PARTNER_API_BASE_URL + "/supportedDrivers/jdbc");
 
             HttpEntity<Void> request = new
                     HttpEntity<>(
